@@ -1,10 +1,15 @@
 import socket
 
+TARGET_IP = None
+PORT_RANGE = None
 
-TARGET_IP = input("Please enter the IP you want to scan: ")
-while not TARGET_IP: TARGET_IP = input("Please enter the IP you want to scan: ")
-PORT_RANGE = input("Please enter the port range yo want to scan (e.g. 5-200): ")
-while not  PORT_RANGE: PORT_RANGE = input("Please enter the port range yo want to scan (e.g. 5-200): ")
+while True:
+	if not TARGET_IP:
+		TARGET_IP = input("Please enter the IP you want to scan: ")
+		continue
+	PORT_RANGE = input("Please enter the port range yo want to scan (e.g. 5-200): ")
+	if not PORT_RANGE: continue
+	break
 
 first_port = int(PORT_RANGE.split("-")[0])
 last_port = int(PORT_RANGE.split("-")[1])
