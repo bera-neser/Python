@@ -19,4 +19,6 @@ while True:
 	if not data: break
 	connection.sendall(b"-- Message Received --\n")
 	print("client:", data.decode("utf-8"))
+
 connection.close()
+print("Connection terminated.")

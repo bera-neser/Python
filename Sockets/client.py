@@ -11,6 +11,9 @@ my_socket.connect((SRV_ADDR, int(SRV_PORT)))
 print("Connection established")
 
 while True:
-	message = input("message to send: ")
+	message = input("send: ")
+	if message == "avokado": break
 	my_socket.sendall(message.encode())
+
+print("Terminating connection...")
 my_socket.close()
